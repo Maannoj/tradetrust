@@ -1,0 +1,443 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  font-family: var(--font-sans), ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background-color: #0b1020;
+  color: #f8fafd;
+  --background: #0b1020;
+  --surface: #161f35;
+  --border: #25304d;
+  --gold: #c9a227;
+  --muted: #94a3b8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--font-sans), ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: radial-gradient(circle at top left, rgba(201, 162, 39, 0.12), transparent 24%), #0b1020;
+  color: #f8fafd;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.landing-shell {
+  width: min(1180px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 2.5rem 0 4rem;
+}
+
+.landing-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.landing-brand {
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.landing-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  color: #94a3b8;
+}
+
+.landing-links a {
+  color: #94a3b8;
+}
+
+.landing-links a:hover {
+  color: #f8fafd;
+}
+
+.landing-hero {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 2rem;
+  align-items: center;
+  padding: 3rem 0;
+}
+
+.landing-hero-copy {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.landing-hero-copy h1 {
+  margin: 0;
+  font-size: clamp(3rem, 4vw, 5.2rem);
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+  max-width: 720px;
+}
+
+.landing-hero-copy p {
+  margin: 0;
+  max-width: 640px;
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.85;
+}
+
+.landing-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.landing-hero-support {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.landing-hero-panel {
+  padding: 2rem;
+  background: rgba(24, 33, 52, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.hero-panel-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.hero-panel-top span {
+  color: var(--muted);
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.landing-search-card {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.hero-search-meta {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 1.75rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.section {
+  padding: 3rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.section:last-child {
+  border-bottom: none;
+}
+
+.section-title {
+  display: grid;
+  gap: 0.75rem;
+  max-width: 720px;
+  margin-bottom: 2rem;
+}
+
+.section-title h2 {
+  margin: 0;
+  font-size: clamp(2rem, 3vw, 3.2rem);
+  line-height: 1.05;
+}
+
+.section-overline {
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #d6c07b;
+}
+
+.section-description {
+  margin: 0;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.metrics-grid,
+.showcase-list,
+.workflow-grid,
+.feature-list,
+.trade-score-grid,
+.pricing-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.metrics-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.metric-card {
+  padding: 2rem;
+  background: rgba(22, 31, 53, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.metric-value {
+  margin: 0 0 0.75rem;
+  font-size: 2.2rem;
+  font-weight: 700;
+}
+
+.metric-label {
+  margin: 0;
+  color: var(--muted);
+}
+
+.showcase-card,
+.workflow-card,
+.feature-item,
+.score-card,
+.testimonial-card,
+.pricing-card {
+  background: rgba(22, 31, 53, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 2rem;
+}
+
+.showcase-list {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.showcase-card h3,
+.workflow-card h3,
+.score-card h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.workflow-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.workflow-card {
+  display: grid;
+  gap: 1rem;
+}
+
+.workflow-card span {
+  width: 3rem;
+  height: 3rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: rgba(201, 162, 39, 0.15);
+  color: #f8fafd;
+  font-weight: 700;
+}
+
+.feature-list {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.feature-item p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.trade-score-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.score-card {
+  display: grid;
+  place-items: center;
+  min-height: 180px;
+}
+
+.testimonial-card {
+  padding: 3rem;
+  background: linear-gradient(180deg, rgba(24, 33, 52, 0.94), rgba(22, 30, 50, 0.96));
+}
+
+.testimonial-card p {
+  margin: 0;
+  color: var(--muted);
+  max-width: 780px;
+}
+
+.pricing-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.pricing-card {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.pricing-card.featured {
+  border-color: rgba(201, 162, 39, 0.3);
+  box-shadow: 0 32px 80px rgba(201, 162, 39, 0.12);
+}
+
+.pricing-label {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+}
+
+.pricing-label span {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.pricing-cost {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+}
+
+.pricing-cost span {
+  font-size: 2.3rem;
+  font-weight: 700;
+}
+
+.pricing-cost small {
+  color: var(--muted);
+}
+
+.pricing-bullets {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.75rem;
+  color: var(--muted);
+}
+
+.pricing-action {
+  justify-self: start;
+}
+
+.footer-panel {
+  padding-top: 3rem;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.footer-logo {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.footer-copy {
+  margin: 0.75rem 0 0;
+  color: var(--muted);
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.footer-links a {
+  color: var(--muted);
+}
+
+@media (max-width: 1080px) {
+  .landing-hero,
+  .metrics-grid,
+  .showcase-list,
+  .workflow-grid,
+  .feature-list,
+  .trade-score-grid,
+  .pricing-grid,
+  .footer-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .landing-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .landing-search-card,
+  .landing-links {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .landing-shell {
+    width: min(100%, calc(100% - 1.5rem));
+    padding: 1.75rem 0 3rem;
+  }
+
+  .landing-nav {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .landing-links {
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .landing-hero-copy h1 {
+    font-size: clamp(2.3rem, 8vw, 3.2rem);
+  }
+
+  .landing-hero-panel,
+  .pricing-card,
+  .metric-card,
+  .showcase-card,
+  .workflow-card,
+  .feature-item,
+  .score-card,
+  .testimonial-card {
+    padding: 1.75rem;
+  }
+
+  .landing-hero-actions,
+  .footer-inner {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
